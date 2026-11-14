@@ -1,0 +1,709 @@
+/* =================================
+   1. GLOBAL STYLE
+================================= */
+
+:root {
+    --primary: #00c6ff;
+    --secondary: #0072ff;
+    --background: #08111f;
+    --surface: #101d30;
+    --surface-light: #16253b;
+    --text: #f4f7fb;
+    --muted: #a5b3c7;
+    --border: rgba(255,255,255,0.09);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    overflow-x: hidden;
+    transition: background 0.3s, color 0.3s;
+}
+
+a {
+    text-decoration: none;
+}
+
+section {
+    scroll-margin-top: 75px;
+}
+
+
+/* =================================
+   2. NAVBAR
+================================= */
+
+.custom-navbar {
+    background: rgba(8,17,31,0.94);
+    backdrop-filter: blur(15px);
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar-brand {
+    font-size: 25px;
+    letter-spacing: 2px;
+    color: var(--text);
+}
+
+.navbar-brand span,
+.footer-logo span {
+    color: var(--primary);
+}
+
+.nav-link {
+    color: var(--muted) !important;
+    margin: 0 8px;
+    transition: 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary) !important;
+}
+
+.btn-theme {
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    border-radius: 30px;
+    padding: 8px 17px;
+}
+
+.btn-theme:hover {
+    background: var(--primary);
+    color: #08111f;
+}
+
+
+/* =================================
+   3. HERO SECTION
+================================= */
+
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 140px 0 80px;
+
+    background:
+      radial-gradient(
+        circle at 85% 40%,
+        rgba(0,114,255,0.18),
+        transparent 35%
+      ),
+      var(--background);
+}
+
+.hero-label {
+    color: var(--primary);
+    font-size: 13px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.hero-section h1 {
+    font-size: clamp(40px, 6vw, 68px);
+    font-weight: 800;
+    margin-top: 20px;
+    line-height: 1.2;
+}
+
+.gradient-text {
+    background: linear-gradient(
+        90deg,
+        #00c6ff,
+        #0072ff
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero-subtitle {
+    color: var(--primary);
+    font-size: 25px;
+    margin: 15px 0;
+}
+
+.hero-description {
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.9;
+    max-width: 620px;
+    margin-bottom: 30px;
+}
+
+.btn-main {
+    background: linear-gradient(
+        90deg,
+        var(--secondary),
+        var(--primary)
+    );
+
+    color: white;
+    padding: 13px 25px;
+    border-radius: 30px;
+    border: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-main:hover {
+    color: white;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0,198,255,0.25);
+}
+
+.btn-outline-main {
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    padding: 13px 25px;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.btn-outline-main:hover {
+    background: var(--primary);
+    color: #08111f;
+}
+
+.social-text {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.social-text span {
+    color: var(--muted);
+    font-size: 12px;
+    padding: 7px 13px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+}
+
+
+/* =================================
+   4. PROFILE IMAGE
+================================= */
+
+.profile-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-decoration {
+    position: absolute;
+    inset: -15px;
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    animation: rotate 12s linear infinite;
+}
+
+.hero-profile {
+    width: 310px;
+    height: 310px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid var(--surface-light);
+    box-shadow: 0 0 40px rgba(0,198,255,0.2);
+    position: relative;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =================================
+   5. GENERAL SECTION
+================================= */
+
+.section-padding {
+    padding: 100px 0;
+}
+
+.section-heading {
+    margin-bottom: 55px;
+}
+
+.section-heading span {
+    color: var(--primary);
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.section-heading h2 {
+    font-size: 42px;
+    font-weight: 800;
+    margin: 12px 0;
+}
+
+.section-heading p {
+    color: var(--muted);
+}
+
+
+/* =================================
+   6. ABOUT
+================================= */
+
+.about-profile {
+    width: 280px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 25px;
+    border: 3px solid var(--primary);
+}
+
+#about h3 {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.about-description {
+    color: var(--muted);
+    line-height: 1.9;
+}
+
+.info-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 15px;
+    height: 100%;
+}
+
+.info-box span {
+    display: block;
+    font-size: 12px;
+    color: var(--primary);
+    margin-bottom: 7px;
+}
+
+.info-box strong {
+    font-size: 14px;
+}
+
+
+/* =================================
+   7. SKILLS
+================================= */
+
+.skills-section {
+    background: rgba(255,255,255,0.025);
+}
+
+.skill-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    padding: 25px;
+    height: 100%;
+}
+
+.skill-card h5 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.skill-card span {
+    color: var(--primary);
+}
+
+.progress {
+    height: 9px;
+    background: #26364d;
+    border-radius: 20px;
+    margin-top: 15px;
+}
+
+.progress-bar {
+    background: linear-gradient(
+        90deg,
+        var(--secondary),
+        var(--primary)
+    );
+
+    border-radius: 20px;
+}
+
+.skill-note {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+
+/* =================================
+   8. PROJECTS
+================================= */
+
+.project-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter-btn {
+    color: var(--muted);
+    border: 1px solid var(--border);
+    border-radius: 25px;
+    padding: 9px 23px;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--primary);
+    color: #08111f;
+    border-color: var(--primary);
+}
+
+.project-card {
+    height: 100%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.project-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: 0.4s;
+}
+
+.project-card:hover img {
+    transform: scale(1.04);
+}
+
+.project-content {
+    padding: 25px;
+}
+
+.project-category {
+    color: var(--primary);
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.project-content h4 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 12px 0;
+}
+
+.project-content p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.btn-project {
+    color: var(--primary);
+    padding: 0;
+    font-weight: bold;
+}
+
+.btn-project:hover {
+    color: white;
+}
+
+
+/* =================================
+   9. MODAL
+================================= */
+
+.custom-modal {
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+}
+
+.custom-modal .modal-header {
+    border-bottom: 1px solid var(--border);
+}
+
+.custom-modal .btn-close {
+    filter: invert(1);
+}
+
+
+/* =================================
+   10. CONTACT
+================================= */
+
+.contact-section {
+    background: rgba(255,255,255,0.025);
+}
+
+.contact-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 35px;
+    border-radius: 20px;
+}
+
+.form-label {
+    color: var(--text);
+    font-weight: bold;
+}
+
+.form-control {
+    background: var(--background);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 13px;
+    border-radius: 10px;
+}
+
+.form-control:focus {
+    background: var(--background);
+    color: var(--text);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(0,198,255,0.12);
+}
+
+.form-control::placeholder {
+    color: #8290a5;
+}
+
+.form-control:valid {
+    color: var(--text);
+}
+
+
+/* =================================
+   11. FOOTER
+================================= */
+
+.footer {
+    background: #050b14;
+    padding: 45px 0 25px;
+}
+
+.footer-logo {
+    font-size: 28px;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.footer p {
+    color: var(--muted);
+    margin-top: 12px;
+}
+
+.copyright {
+    font-size: 12px;
+}
+
+
+/* =================================
+   12. BACK TO TOP
+================================= */
+
+.back-to-top {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #08111f;
+    font-size: 23px;
+    display: none;
+    z-index: 999;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px);
+}
+
+
+/* =================================
+   13. LIGHT MODE
+================================= */
+
+body.light-mode {
+    --background: #f4f8ff;
+    --surface: #ffffff;
+    --surface-light: #eaf2ff;
+    --text: #15243a;
+    --muted: #5c6c82;
+    --border: rgba(0,30,70,0.12);
+}
+
+body.light-mode .custom-navbar {
+    background: rgba(244,248,255,0.95);
+}
+
+body.light-mode .navbar-brand {
+    color: #15243a;
+}
+
+body.light-mode .navbar-toggler {
+    filter: invert(1);
+}
+
+body.light-mode .hero-section {
+    background:
+      radial-gradient(
+        circle at 85% 40%,
+        rgba(0,114,255,0.12),
+        transparent 35%
+      ),
+      var(--background);
+}
+
+body.light-mode .skills-section,
+body.light-mode .contact-section {
+    background: rgba(0,0,0,0.025);
+}
+
+body.light-mode .footer {
+    background: #15243a;
+}
+
+
+/* =================================
+   14. RESPONSIVE
+================================= */
+
+@media (max-width: 991px) {
+
+    .custom-navbar .navbar-collapse {
+        background: var(--surface);
+        padding: 20px;
+        border-radius: 12px;
+        margin-top: 15px;
+    }
+
+    .hero-section {
+        text-align: center;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .social-text {
+        justify-content: center;
+    }
+
+    .profile-wrapper {
+        margin-top: 25px;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .section-padding {
+        padding: 75px 0;
+    }
+
+    .section-heading h2 {
+        font-size: 34px;
+    }
+
+    .hero-section h1 {
+        font-size: 42px;
+    }
+
+    .hero-subtitle {
+        font-size: 21px;
+    }
+
+    .hero-profile {
+        width: 230px;
+        height: 230px;
+    }
+
+    .about-profile {
+        width: 220px;
+        height: 260px;
+    }
+
+    .contact-card {
+        padding: 22px;
+    }
+
+}
+
+
+/* SOCIAL MEDIA CONTACT */
+
+.social-card {
+    display: block;
+    height: 100%;
+    padding: 30px 20px;
+    text-align: center;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    color: var(--text);
+    transition: 0.3s;
+}
+
+.social-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary);
+    box-shadow: 0 10px 30px rgba(0,198,255,0.15);
+    color: var(--text);
+}
+
+.social-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.social-card h5 {
+    font-weight: bold;
+}
+
+.social-card p {
+    color: var(--muted);
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.social-card span {
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: bold;
+}
